@@ -16,7 +16,7 @@ describe('src/models/Departement', () => {
     checkModelName(Departement)('Departement')
 
     context('properties', () => {
-        ;['name', 'description'].forEach(checkPropertyExists(departement))
+        ['name', 'description'].forEach(checkPropertyExists(departement))
     })
 
     context('check associations', () => {
