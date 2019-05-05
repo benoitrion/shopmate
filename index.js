@@ -1,3 +1,4 @@
+const createError = require('http-errors');
 const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
@@ -15,10 +16,18 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// Setup a default catch-all route that sends back a welcome message in JSON format.
-app.get('*', (req, res) => res.status(200).send({
-    message: 'Hello world',
-}));
+// Models
+const models = require('./models');
+
+//Sync database
+models.sequelize.sync().then(function() {
+    console.log('Database setup');
+}).catch(function(err) {    
+    console.log('Something went wrong with db update');
+})
+
+// Require routes
+require('./routes')(app);
 
 const port = parseInt(process.env.PORT, 10) || 8000;
 
