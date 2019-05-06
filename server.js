@@ -22,6 +22,7 @@ const models = require('./models');
 models.sequelize.sync().then(function() {
     console.log('Database setup');
 }).catch(function(err) {    
+    console.log(err);
     console.log('Something went wrong with db update');
 })
 
