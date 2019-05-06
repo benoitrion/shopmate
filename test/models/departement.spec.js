@@ -7,7 +7,7 @@ const {
     checkPropertyExists
 } = require('sequelize-test-helpers')
 
-const DepartementModel = require('../../src/models/Departement')
+const DepartementModel = require('../../models/Departement')
 
 describe('src/models/Departement', () => {
     const Departement = DepartementModel(sequelize, dataTypes)

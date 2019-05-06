@@ -7,7 +7,7 @@ const {
     checkPropertyExists
 } = require('sequelize-test-helpers')
 
-const CategoryModel = require('../../src/models/Category')
+const CategoryModel = require('../../models/Category')
 
 describe('src/models/Category', () => {
     const Category = CategoryModel(sequelize, dataTypes)

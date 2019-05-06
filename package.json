@@ -2,9 +2,9 @@
   "name": "shopmate-backend",
   "version": "1.0.0",
   "description": "shopmate-backend",
-  "main": "./src/index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node ./src/index.js",
+    "start": "node server.js",
     "start:dev": "nodemon ./bin/www",
     "test": "mocha ./test/ --require ./test/unitTestHelper.js --recursive"
   },
@@ -20,12 +20,11 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
+    "chai-http": "^4.3.0",
     "nodemon": "^1.19.0",
-    "proxyquire": "^2.1.0",
     "sequelize-cli": "^5.4.0",
     "sequelize-test-helpers": "^1.1.0",
     "sinon": "^7.3.2",
-    "sinon-chai": "^3.3.0",
-    "supertest": "^4.0.2"
+    "sinon-chai": "^3.3.0"
   }
 }

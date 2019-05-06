@@ -1,49 +1,26 @@
-// const { expect } = require('chai')
-// const { request } = require('supertest')
-// const { match, stub } = require('sinon')
-// const proxyquire = require('proxyquire')
+'use strict';
 
-// const { makeMockModels } = require('sequelize-test-helpers')
+// dependencies
+let chai = require('chai');
+let chaiHttp = require('chai-http');
+let server = require('../../server');
 
-// const mockModels = makeMockModels({ Product: { create: stub(), findAll: stub(), findOne: stub() } })
+chai.use(chaiHttp);
 
+describe('Product', () => {
 
-// const resetStubs = () => {
-//     mockModels.Product.create.resetHistory()
-//     mockModels.Product.findAll.resetHistory()
-//     mockModels.Product.findOne.resetHistory()
-// }
+    // test the GET route
 
-// describe.only('POST /api/product', () => {
-//     const data = {
-//         id: '1',
-//         name: 'name1',
-//         description: 'description1',
-//         price: 15,
-//         discounted_price: 15,
-//         image: 'path/to/image',
-//         image_2: 'path/to/image_2',
-//         thumbnail: 'path/to/thumbnail',
-//         display: 1
-//     }
-//     before(() => {
-//         mockModels.Product.create.resolves(data);
-//     })
+    describe('/GET products', () => {
+        it('it should return all the products', (done) => {
+            chai.request(server)
+                .get('/api/products')
+                .end((err, res) => {
+                    res.should.have.status(201);
+                    // add additional assertions here
+                done();
+                });
+        });
+    });
 
-//     after(resetStubs)
-
-//     it('respond with 201 created', (done) => {
-//         request(app)
-//             .post('/api/product')
-//             .send(data)
-//             .set('Accept', 'application/json')
-//             .expect('Content-Type', /json/)
-//             .expect(201)
-//             .end((err) => {
-//                 if (err) return done(err);
-//                 done();
-//             });
-//     })
-//     describe.only('GET /api/products', () => {
-//     })
-// })
+});

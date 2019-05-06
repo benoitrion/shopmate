@@ -7,7 +7,7 @@ const {
     checkPropertyExists
 } = require('sequelize-test-helpers')
 
-const ProductModel = require('../../src/models/Product')
+const ProductModel = require('../../models/Product')
 
 describe('src/models/Product', () => {
     const Product = ProductModel(sequelize, dataTypes)
