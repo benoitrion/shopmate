@@ -4,8 +4,6 @@ import ProductList from '../ProductList/ProductList';
 
 import { fetchProducts } from '../../services/catalog/actions';
 
-import './style.scss';
-
 class App extends Component {
 
   constructor(props) {
