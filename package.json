@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
+    "heroku-postbuild": "cd client && yarn && yarn run build",
     "start:dev": "nodemon ./bin/www",
     "test": "mocha ./test/ --require ./test/unitTestHelper.js --recursive"
   },
