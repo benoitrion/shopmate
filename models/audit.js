@@ -1,25 +1,29 @@
 /* jshint indent: 1 */
 
 module.exports = function(sequelize, DataTypes) {
-	return sequelize.define('category', {
-		category_id: {
+	return sequelize.define('audit', {
+		audit_id: {
 			type: DataTypes.INTEGER(11),
 			allowNull: false,
 			primaryKey: true
 		},
-		department_id: {
+		order_id: {
 			type: DataTypes.INTEGER(11),
 			allowNull: false
 		},
-		name: {
-			type: DataTypes.STRING(100),
+		created_on: {
+			type: DataTypes.DATE,
 			allowNull: false
 		},
-		description: {
-			type: DataTypes.STRING(1000),
-			allowNull: true
+		message: {
+			type: DataTypes.TEXT,
+			allowNull: false
+		},
+		code: {
+			type: DataTypes.INTEGER(11),
+			allowNull: false
 		}
 	}, {
-		tableName: 'category'
+		tableName: 'audit'
 	});
 };

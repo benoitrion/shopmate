@@ -1,15 +1,11 @@
 /* jshint indent: 1 */
 
 module.exports = function(sequelize, DataTypes) {
-	return sequelize.define('category', {
-		category_id: {
+	return sequelize.define('department', {
+		department_id: {
 			type: DataTypes.INTEGER(11),
 			allowNull: false,
 			primaryKey: true
-		},
-		department_id: {
-			type: DataTypes.INTEGER(11),
-			allowNull: false
 		},
 		name: {
 			type: DataTypes.STRING(100),
@@ -20,6 +16,6 @@ module.exports = function(sequelize, DataTypes) {
 			allowNull: true
 		}
 	}, {
-		tableName: 'category'
+		tableName: 'department'
 	});
 };

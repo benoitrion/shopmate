@@ -1,25 +1,21 @@
 /* jshint indent: 1 */
 
 module.exports = function(sequelize, DataTypes) {
-	return sequelize.define('category', {
-		category_id: {
+	return sequelize.define('attribute_value', {
+		attribute_value_id: {
 			type: DataTypes.INTEGER(11),
 			allowNull: false,
 			primaryKey: true
 		},
-		department_id: {
+		attribute_id: {
 			type: DataTypes.INTEGER(11),
 			allowNull: false
 		},
-		name: {
+		value: {
 			type: DataTypes.STRING(100),
 			allowNull: false
-		},
-		description: {
-			type: DataTypes.STRING(1000),
-			allowNull: true
 		}
 	}, {
-		tableName: 'category'
+		tableName: 'attribute_value'
 	});
 };
