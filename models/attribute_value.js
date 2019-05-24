@@ -1,7 +1,7 @@
 /* jshint indent: 1 */
 
-module.exports = function(sequelize, DataTypes) {
-	return sequelize.define('attribute_value', {
+module.exports = function (sequelize, DataTypes) {
+	const AttributeValue = sequelize.define('attribute_value', {
 		attribute_value_id: {
 			type: DataTypes.INTEGER(11),
 			allowNull: false,
@@ -16,6 +16,12 @@ module.exports = function(sequelize, DataTypes) {
 			allowNull: false
 		}
 	}, {
-		tableName: 'attribute_value'
+		tableName: 'attribute_value',
+		classMethods: {
+			associate: function (models) {
+				AttributeValue.hasOne(models.Attribute);
+			}
+		},
 	});
+	return AttributeValue;
 };

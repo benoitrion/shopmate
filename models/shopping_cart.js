@@ -1,7 +1,7 @@
 /* jshint indent: 1 */
 
 module.exports = function(sequelize, DataTypes) {
-	return sequelize.define('shopping_cart', {
+	const ShoppingCart = sequelize.define('shopping_cart', {
 		item_id: {
 			type: DataTypes.INTEGER(11),
 			allowNull: false,
@@ -33,6 +33,7 @@ module.exports = function(sequelize, DataTypes) {
 			allowNull: false
 		}
 	}, {
-		tableName: 'shopping_cart'
+		tableName: 'shopping_cart',
 	});
+	return ShoppingCart;
 };

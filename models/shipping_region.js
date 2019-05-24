@@ -1,7 +1,7 @@
 /* jshint indent: 1 */
 
-module.exports = function(sequelize, DataTypes) {
-	return sequelize.define('shipping_region', {
+module.exports = function (sequelize, DataTypes) {
+	const ShippingRegion = sequelize.define('shipping_region', {
 		shipping_region_id: {
 			type: DataTypes.INTEGER(11),
 			allowNull: false,
@@ -12,6 +12,19 @@ module.exports = function(sequelize, DataTypes) {
 			allowNull: false
 		}
 	}, {
-		tableName: 'shipping_region'
+		tableName: 'shipping_region',
+		classMethods: {
+			associate: function (models) {
+				ShippingRegion.belongsTo(models.Customer, {
+					foreignKey: 'shipping_region_id',
+					foreignKeyConstraint: true
+				}),
+				ShippingRegion.belongsTo(models.Shipping, {
+					foreignKey: 'shipping_region_id',
+					foreignKeyConstraint: true
+				});
+			}
+		}
 	});
+	return ShippingRegion;
 };

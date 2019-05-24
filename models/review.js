@@ -1,7 +1,7 @@
 /* jshint indent: 1 */
 
 module.exports = function(sequelize, DataTypes) {
-	return sequelize.define('review', {
+	const Review = sequelize.define('review', {
 		review_id: {
 			type: DataTypes.INTEGER(11),
 			allowNull: false,
@@ -28,6 +28,13 @@ module.exports = function(sequelize, DataTypes) {
 			allowNull: false
 		}
 	}, {
-		tableName: 'review'
+		tableName: 'review',
+		classMethods: {
+			associate: function (models) {
+				Review.hasOne(models.Order),
+				Review.hasOne(models.Product);
+			}
+		},
 	});
+	return Review;
 };

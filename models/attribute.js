@@ -1,7 +1,7 @@
 /* jshint indent: 1 */
 
 module.exports = function(sequelize, DataTypes) {
-	return sequelize.define('attribute', {
+	const Attribute = sequelize.define('attribute', {
 		attribute_id: {
 			type: DataTypes.INTEGER(11),
 			allowNull: false,
@@ -12,6 +12,15 @@ module.exports = function(sequelize, DataTypes) {
 			allowNull: false
 		}
 	}, {
-		tableName: 'attribute'
+		tableName: 'attribute',
+		classMethods: {
+			associate: function (models) {
+				Attribute.belongsTo(models.AttributeValue, {
+					foreignKey: 'attribute_id',
+					foreignKeyConstraint: true
+				});
+			}
+		},
 	});
+	return Attribute;
 };

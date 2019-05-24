@@ -1,7 +1,7 @@
 /* jshint indent: 1 */
 
 module.exports = function(sequelize, DataTypes) {
-	return sequelize.define('customer', {
+	const Customer = sequelize.define('customer', {
 		customer_id: {
 			type: DataTypes.INTEGER(11),
 			allowNull: false,
@@ -66,6 +66,20 @@ module.exports = function(sequelize, DataTypes) {
 			allowNull: true
 		}
 	}, {
-		tableName: 'customer'
+		tableName: 'customer',
+		classMethods: {
+			associate: function (models) {
+				Customer.belongsTo(models.Order, {
+					foreignKey: 'customer_id',
+					foreignKeyConstraint: true
+				}),
+				Customer.hasMany(models.ShippingRegion),
+				Customer.belongsTo(models.Review, {
+					foreignKey: 'customer_id',
+					foreignKeyConstraint: true
+				});
+			}
+		},
 	});
+	return Customer;
 };

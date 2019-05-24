@@ -1,7 +1,7 @@
 /* jshint indent: 1 */
 
 module.exports = function(sequelize, DataTypes) {
-	return sequelize.define('orders', {
+	const Order = sequelize.define('orders', {
 		order_id: {
 			type: DataTypes.INTEGER(11),
 			allowNull: false,
@@ -50,6 +50,22 @@ module.exports = function(sequelize, DataTypes) {
 			allowNull: true
 		}
 	}, {
-		tableName: 'orders'
+		tableName: 'orders',
+		classMethods: {
+			associate: function (models) {
+				Order.hasOne(models.Customer),
+				Order.hasOne(models.Shipping),
+				Order.hasOne(models.Tax),
+				Order.belongsTo(models.OrderDetail, {
+					foreignKey: 'order_id',
+					foreignKeyConstraint: true
+				}),
+				Order.belongsTo(models.Audit, {
+					foreignKey: 'order_id',
+					foreignKeyConstraint: true
+				});
+			}
+		},
 	});
+	return Order;
 };

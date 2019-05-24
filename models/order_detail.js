@@ -1,7 +1,7 @@
 /* jshint indent: 1 */
 
 module.exports = function(sequelize, DataTypes) {
-	return sequelize.define('order_detail', {
+	const OrderDetail = sequelize.define('order_detail', {
 		item_id: {
 			type: DataTypes.INTEGER(11),
 			allowNull: false,
@@ -32,6 +32,12 @@ module.exports = function(sequelize, DataTypes) {
 			allowNull: false
 		}
 	}, {
-		tableName: 'order_detail'
+		tableName: 'order_detail',
+		classMethods: {
+			associate: function (models) {
+				OrderDetail.hasOne(models.Order);
+			}
+		},
 	});
+	return OrderDetail;
 };

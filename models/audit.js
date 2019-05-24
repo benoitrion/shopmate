@@ -1,7 +1,7 @@
 /* jshint indent: 1 */
 
 module.exports = function(sequelize, DataTypes) {
-	return sequelize.define('audit', {
+	const Audit = sequelize.define('audit', {
 		audit_id: {
 			type: DataTypes.INTEGER(11),
 			allowNull: false,
@@ -24,6 +24,12 @@ module.exports = function(sequelize, DataTypes) {
 			allowNull: false
 		}
 	}, {
-		tableName: 'audit'
+		tableName: 'audit',
+		classMethods: {
+			associate: function (models) {
+				Audit.hasOne(models.Order);
+			}
+		},
 	});
+	return Audit;
 };

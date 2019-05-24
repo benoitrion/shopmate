@@ -1,7 +1,7 @@
 /* jshint indent: 1 */
 
 module.exports = function(sequelize, DataTypes) {
-	return sequelize.define('product', {
+	const Customer = sequelize.define('product', {
 		product_id: {
 			type: DataTypes.INTEGER(11),
 			allowNull: false,
@@ -42,6 +42,15 @@ module.exports = function(sequelize, DataTypes) {
 			defaultValue: '0'
 		}
 	}, {
-		tableName: 'product'
+		tableName: 'product',
+		classMethods: {
+			associate: function (models) {
+				Customer.belongsTo(models.Review, {
+					foreignKey: 'product_id',
+					foreignKeyConstraint: true
+				});
+			}
+		},
 	});
+	return Customer;
 };

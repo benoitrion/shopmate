@@ -1,7 +1,7 @@
 /* jshint indent: 1 */
 
 module.exports = function(sequelize, DataTypes) {
-	return sequelize.define('tax', {
+	const Tax = sequelize.define('tax', {
 		tax_id: {
 			type: DataTypes.INTEGER(11),
 			allowNull: false,
@@ -16,6 +16,15 @@ module.exports = function(sequelize, DataTypes) {
 			allowNull: false
 		}
 	}, {
-		tableName: 'tax'
+		tableName: 'tax',
+		classMethods: {
+			associate: function (models) {
+				Tax.belongsTo(models.Order, {
+					foreignKey: 'tax_id',
+					foreignKeyConstraint: true
+				});
+			}
+		},
 	});
+	return Tax;
 };

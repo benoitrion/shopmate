@@ -1,7 +1,7 @@
 /* jshint indent: 1 */
 
-module.exports = function(sequelize, DataTypes) {
-	return sequelize.define('department', {
+module.exports = function (sequelize, DataTypes) {
+	const Department = sequelize.define('department', {
 		department_id: {
 			type: DataTypes.INTEGER(11),
 			allowNull: false,
@@ -16,6 +16,15 @@ module.exports = function(sequelize, DataTypes) {
 			allowNull: true
 		}
 	}, {
-		tableName: 'department'
-	});
+			tableName: 'department',
+			classMethods: {
+				associate: function (models) {
+					Department.belongsTo(models.Category, {
+						foreignKey: 'category_id',
+						foreignKeyConstraint: true
+					});
+				}
+			},
+		});
+	return Department;
 };
