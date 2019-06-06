@@ -1,7 +1,7 @@
 /* jshint indent: 1 */
 
 module.exports = function(sequelize, DataTypes) {
-	const Customer = sequelize.define('product', {
+	const Product = sequelize.define('product', {
 		product_id: {
 			type: DataTypes.INTEGER(11),
 			allowNull: false,
@@ -52,5 +52,5 @@ module.exports = function(sequelize, DataTypes) {
 			}
 		},
 	});
-	return Customer;
+	return Product;
 };
