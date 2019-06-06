@@ -6,8 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "start:dev": "nodemon ./bin/www",
-    "test": "mocha ./test/ --require ./test/unitTestHelper.js --recursive",
-    "heroku-postbuild": "cd client && yarn && yarn run build"
+    "test": "mocha ./test/ --require ./test/unitTestHelper.js --recursive"
   },
   "author": "Benoit Rion",
   "license": "ISC",
