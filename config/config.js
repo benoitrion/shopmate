@@ -23,7 +23,7 @@ module.exports = {
   },
   "production": {
     "use_env_variable": "JAWSDB_BRONZE_URL",
-    "dialect": "mysql"
+    "dialect": "mysql",
 		"define" : {
       "timestamps": false,
     }
