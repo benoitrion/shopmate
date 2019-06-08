@@ -21,6 +21,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <main>
+          <h1>Shopmate</h1>
           <div className="shelf-container">
             <ProductList products={this.state.products} />
           </div>
