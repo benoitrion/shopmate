@@ -4,7 +4,7 @@
   "description": "shopmate",
   "main": "server.js",
   "scripts": {
-    "install": "(cd client && yarn) && (cd server && yarn)",
+    "install": "concurrently \"cd client && yarn\" \"cd server && yarn\"",
     "start": "concurrently \"cd client && yarn start\" \"cd server && yarn start\""
   },
   "author": "Benoit Rion",
