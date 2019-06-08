@@ -2,11 +2,20 @@ const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 
+// add the path module
+const path = require('path');
+
 // This will be our application entry. We'll setup our server here.
 const http = require('http');
 
 // Set up the express app
 const app = express();
+
+// get reference to the client build directory
+const staticFiles = express.static(path.join(__dirname, '../../client/build'))
+
+// pass the static files (react app) to the express app. 
+app.use(staticFiles)
 
 // Log requests to the console.
 app.use(logger('dev'));
@@ -28,6 +37,8 @@ models.sequelize.sync().then(function() {
 
 // Require routes
 require('./routes')(app);
+
+app.use('/*', staticFiles)
 
 const port = parseInt(process.env.PORT, 10) || 8000;
 
