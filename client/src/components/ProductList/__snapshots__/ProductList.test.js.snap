@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductList test should render correctly 1`] = `
+<Fragment>
+  <Grid
+    className="product-list_grid"
+  >
+    <Row>
+      <Cell
+        columns={4}
+        key="1"
+      >
+        <Product
+          product={
+            Object {
+              "description": "This beautiful and iconic T-shirt will no doubt lead you to your own triumph.",
+              "discounted_price": 0,
+              "display": 0,
+              "id": 1,
+              "image": "arc-d-triomphe.gif",
+              "image_2": "arc-d-triomphe-2.gif",
+              "name": "Arc d'Triomphe",
+              "price": 14.99,
+              "thumbnail": "arc-d-triomphe-thumbnail.gif",
+            }
+          }
+        />
+      </Cell>
+      <Cell
+        columns={4}
+        key="2"
+      >
+        <Product
+          product={
+            Object {
+              "description": "This beautiful and iconic T-shirt will no doubt lead you to your own triumph.",
+              "discounted_price": 0,
+              "display": 0,
+              "id": 2,
+              "image": "arc-d-triomphe.gif",
+              "image_2": "arc-d-triomphe-2.gif",
+              "name": "name2",
+              "price": 14.99,
+              "thumbnail": "arc-d-triomphe-thumbnail.gif",
+            }
+          }
+        />
+      </Cell>
+    </Row>
+  </Grid>
+</Fragment>
+`;

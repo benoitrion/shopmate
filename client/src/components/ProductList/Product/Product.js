@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Card, {
   CardPrimaryContent,
@@ -50,5 +51,9 @@ function Product({ product }) {
     </React.Fragment>
   );
 }
+
+Product.propTypes = {
+  product: PropTypes.object.isRequired
+};
 
 export default Product;

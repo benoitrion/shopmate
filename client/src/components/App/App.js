@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import Header from '../Header/Header';
 import ProductList from '../ProductList/ProductList';
@@ -7,8 +8,8 @@ import { fetchProducts } from '../../services/catalog/actions';
 
 class App extends Component {
 
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       products: []
     }

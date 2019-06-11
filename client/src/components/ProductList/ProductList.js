@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { Cell, Grid, Row } from '@material/react-layout-grid';
 
@@ -25,5 +26,9 @@ function ProductList({ products }) {
     </React.Fragment>
   )
 }
+
+ProductList.propTypes = {
+  products: PropTypes.array.isRequired
+};
 
 export default ProductList;

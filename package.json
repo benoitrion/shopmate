@@ -18,5 +18,8 @@
   "engines": {
     "yarn": "1.16.0",
     "node": "10.15.0"
+  },
+  "devDependencies": {
+    "prop-types": "^15.7.2"
   }
 }
