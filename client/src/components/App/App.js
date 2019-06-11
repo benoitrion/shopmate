@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import Header from '../Header/Header';
 import ProductList from '../ProductList/ProductList';
 
 import { fetchProducts } from '../../services/catalog/actions';
@@ -20,12 +21,8 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <main>
-          <h1>Shopmate</h1>
-          <div className="shelf-container">
-            <ProductList products={this.state.products} />
-          </div>
-        </main>
+        <Header></Header>
+        <ProductList products={this.state.products} />
       </React.Fragment>
     );
   }

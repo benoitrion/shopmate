@@ -42,7 +42,7 @@ function Product({ product }) {
           <CardActionButtons>
             <Button className='product-card__button'>
               <MaterialIcon icon='add_shopping_cart' className='product-card__icon' />
-              <span class="mdc-button__label">Add to cart</span>
+              <span className="mdc-button__label">Add to cart</span>
             </Button>
           </CardActionButtons>
         </CardActions>

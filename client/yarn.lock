@@ -1217,6 +1217,27 @@
     react "^16.4.2"
     utility-types "^3.2.1"
 
+"@material/react-ripple@^0.13.0":
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/@material/react-ripple/-/react-ripple-0.13.0.tgz#cfc90a2b92e06d809fe3d95cea8b450ff0a1828c"
+  integrity sha512-cmgZJ5L75msD/dZS6GY4yhC5PpnNsqp8Qq/3dLud8+cSBZKPmeBH4YHV8U660LpoxbCBdxi8HzM7CkslD1Acnw==
+  dependencies:
+    "@material/dom" "^1.0.0"
+    "@material/ripple" "^1.0.0"
+    classnames "^2.2.6"
+    react "^16.4.2"
+    utility-types "^3.2.1"
+
+"@material/react-top-app-bar@^0.13.0":
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/@material/react-top-app-bar/-/react-top-app-bar-0.13.0.tgz#aa5bf6608f733b1bfce9bb09e6dae56b76da6f36"
+  integrity sha512-6muJJoo9/uUyP/9XBduJyWxDSMArteJ1K+RJ8QUcvVU+JiaOoUrz3LxjpFRz89kKc16PbNlymt10cvlFOs3G9g==
+  dependencies:
+    "@material/react-ripple" "^0.13.0"
+    "@material/top-app-bar" "^1.1.0"
+    classnames "^2.2.6"
+    react "^16.4.2"
+
 "@material/react-typography@^0.12.0":
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/@material/react-typography/-/react-typography-0.12.0.tgz#bb1d0a2326c8c975d1d15806cb36ea2555ec45a2"
@@ -1256,6 +1277,21 @@
   integrity sha512-YYUV9Rhbx4r/EMb/zoOYJUWjhXChNaLlH1rqt3vpNVyxRcxGqoVMGp5u1XALBCFiD9dACPKLIkKyRYa928nmPQ==
   dependencies:
     "@material/feature-targeting" "^0.44.1"
+
+"@material/top-app-bar@^1.1.0":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@material/top-app-bar/-/top-app-bar-1.1.1.tgz#a7a339fbb49fcd11a6362ca9b301fac4e28398c4"
+  integrity sha512-UZ2aHB+lzI+ddy/Hcy61hvNbSZBLArgWwVtA1r4UvQAlvht0Zl85jCj1vs+GM+qxbMFfXFet2q0n5p4ykk9v7g==
+  dependencies:
+    "@material/animation" "^1.0.0"
+    "@material/base" "^1.0.0"
+    "@material/elevation" "^1.1.0"
+    "@material/ripple" "^1.1.0"
+    "@material/rtl" "^0.42.0"
+    "@material/shape" "^1.1.1"
+    "@material/theme" "^1.1.0"
+    "@material/typography" "^1.0.0"
+    tslib "^1.9.3"
 
 "@material/typography@^1.0.0":
   version "1.0.0"
