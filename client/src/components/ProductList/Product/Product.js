@@ -41,9 +41,12 @@ function Product({ product }) {
         </Body2>
         <CardActions>
           <CardActionButtons>
-            <Button className='product-card__button'>
-              <MaterialIcon icon='add_shopping_cart' className='product-card__icon' />
-              <span className="mdc-button__label">Add to cart</span>
+            <Button 
+              className='product-card__button' 
+              icon={<MaterialIcon icon='add_shopping_cart' className='product-card__icon'/>} 
+              children='Add to cart' 
+              unelevated
+            >
             </Button>
           </CardActionButtons>
         </CardActions>

@@ -16,7 +16,7 @@ function ProductList({ products }) {
         <Row>
           {products.map(p => {
             return (
-              <Cell columns={4} key={p.id}>
+              <Cell columns={3} key={p.id}>
                   <Product product={p}/>
               </Cell>
             )

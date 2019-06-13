@@ -1,6 +1,11 @@
-import { shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 import React from 'react';
 import Product from './Product';
+
+import {
+  Headline6,
+  Body2
+} from '@material/react-typography/'
 
 describe('Header test', () => {
   const mockProduct = {
@@ -17,14 +22,9 @@ describe('Header test', () => {
   let wrapper;
   beforeEach(() => wrapper = mount(<Product product={mockProduct}/>));
   
-  it('should render correctly', () => {
-    wrapper = shallow(<Product product={mockProduct}/>)
-    expect(wrapper).toMatchSnapshot()
-  });
-  
   it('renders name and description components', () => {
-    expect(wrapper.find('h6').text()).toEqual(mockProduct.name);
-    expect(wrapper.find('p').text()).toEqual(mockProduct.description);
+    expect(wrapper.find(Headline6).text()).toEqual(mockProduct.name);
+    expect(wrapper.find(Body2).text()).toEqual(mockProduct.description);
   });
 
   it('renders product', () => {

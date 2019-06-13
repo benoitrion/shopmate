@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import ProductList from './ProductList';
 import Product from './Product/Product';
 
@@ -29,12 +29,14 @@ describe('ProductList test', () => {
     }
   ];
   let wrapper;
-  beforeEach(() => wrapper = shallow(<ProductList products={mockProducts}/>));
+  beforeEach(() => wrapper = mount(<ProductList products={mockProducts}/>));
 
-  it('should render correctly', () => expect(wrapper).toMatchSnapshot());
-  
   it('renders two <Product /> components', () => {
     expect(wrapper.find(Product).length).toEqual(2);
+  });
+
+  it('renders products', () => {
+    expect(wrapper.props().products).toEqual(mockProducts);
   });
 
 });

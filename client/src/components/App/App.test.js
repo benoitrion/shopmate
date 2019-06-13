@@ -5,12 +5,8 @@ import Header from '../Header/Header';
 import ProductList from '../ProductList/ProductList';
 
 describe('App test', () => {
-  let wrapper;
-  beforeEach(() => wrapper = shallow(<App />));
-
-  it('should render correctly', () => expect(wrapper).toMatchSnapshot());
-  
-  it('should render the Calculator Component', () => {
+  it('renders without crashing', () => {
+    const wrapper = shallow(<App />);
     expect(wrapper.containsMatchingElement(<Header />)).toEqual(true);
     expect(wrapper.containsMatchingElement(<ProductList products={[]}/>)).toEqual(true);
   });

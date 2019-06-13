@@ -12,7 +12,7 @@ function Header() {
   return (
     <React.Fragment>
       <TopAppBar 
-        className='top-app-bar'
+        className='header_top-app-bar'
         title='SHOPMATE'
         navigationIcon={<MaterialIcon
           icon='menu'
