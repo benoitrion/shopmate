@@ -5,7 +5,7 @@ import { Cell, Grid, Row } from '@material/react-layout-grid';
 
 import '@material/react-layout-grid/index.scss';
 
-import Product from './Product/Product';
+import ProductCard from './ProductCard/ProductCard';
 
 import './ProductList.scss';
 
@@ -17,7 +17,7 @@ function ProductList({ products }) {
           {products.map(p => {
             return (
               <Cell columns={3} key={p.id}>
-                  <Product product={p}/>
+                  <ProductCard product={p}/>
               </Cell>
             )
           })}

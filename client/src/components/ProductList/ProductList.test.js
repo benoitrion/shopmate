@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import ProductList from './ProductList';
-import Product from './Product/Product';
+import ProductCard from './ProductCard/ProductCard';
 
 describe('ProductList test', () => {
   const mockProducts = [
@@ -31,8 +31,8 @@ describe('ProductList test', () => {
   let wrapper;
   beforeEach(() => wrapper = mount(<ProductList products={mockProducts}/>));
 
-  it('renders two <Product /> components', () => {
-    expect(wrapper.find(Product).length).toEqual(2);
+  it('renders two <ProductCard /> components', () => {
+    expect(wrapper.find(ProductCard).length).toEqual(2);
   });
 
   it('renders products', () => {

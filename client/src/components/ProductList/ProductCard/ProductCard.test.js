@@ -1,6 +1,6 @@
 import { mount } from 'enzyme';
 import React from 'react';
-import Product from './Product';
+import ProductCard from './ProductCard';
 
 import {
   Headline6,
@@ -20,7 +20,7 @@ describe('Header test', () => {
     display: 0
   } 
   let wrapper;
-  beforeEach(() => wrapper = mount(<Product product={mockProduct}/>));
+  beforeEach(() => wrapper = mount(<ProductCard product={mockProduct}/>));
   
   it('renders name and description components', () => {
     expect(wrapper.find(Headline6).text()).toEqual(mockProduct.name);

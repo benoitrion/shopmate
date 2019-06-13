@@ -21,9 +21,9 @@ import '@material/react-typography/index.scss';
 import '@material/react-button/index.scss';
 import '@material/react-material-icon/index.scss';
 
-import './Product.scss';
+import './ProductCard.scss';
 
-function Product({ product }) {
+function ProductCard({ product }) {
   const image = require(`../../../static/product_images/${product.image}`);
   return (
     <React.Fragment>
@@ -31,11 +31,9 @@ function Product({ product }) {
         <CardPrimaryContent>
           <CardMedia square imageUrl={image} alt={product.name} className='product-card__media' />
         </CardPrimaryContent>
-        <div className='product-card__primary'>
-          <Headline6 className='product-card__title'>
-            {product.name}
-          </Headline6>
-        </div>
+        <Headline6 className='product-card__name'>
+          {product.name}
+        </Headline6>
         <Body2 className='product-card__body'>
           {product.description}
         </Body2>
@@ -55,8 +53,8 @@ function Product({ product }) {
   );
 }
 
-Product.propTypes = {
+ProductCard.propTypes = {
   product: PropTypes.object.isRequired
 };
 
-export default Product;
+export default ProductCard;
