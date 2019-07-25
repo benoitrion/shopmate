@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Header from "../Header/Header";
-import ProductList from "../ProductList/ProductList";
+import Catalog from "../Catalog/Catalog";
 import ProductPage from "../ProductPage/ProductPage";
 import PageNotFound from "../PageNotFound";
 
@@ -26,7 +26,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <Header
-          onClickMenu={() => {
+          clickOnMenu={() => {
             console.log("menu clicked");
           }}
         />
@@ -36,7 +36,7 @@ class App extends Component {
               exact
               path="/"
               render={props => (
-                <ProductList {...props} products={this.state.products} />
+                <Catalog {...props} products={this.state.products} />
               )}
             />
             <Route

@@ -1,18 +1,18 @@
 .product-card {
 }
 .product-card__media {
+  padding: 25px;
 }
 .product-card__name {
   margin: 10px;
 }
 .product-card__body {
-  height: 100px;
   margin: 10px;
 }
 .product-card__icon {
   margin-right: 5px;
   display: inline-block;
-  vertical-align:middle;
+  vertical-align: middle;
 }
 .product-card__button {
   border-radius: 18px;

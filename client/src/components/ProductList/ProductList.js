@@ -16,7 +16,7 @@ const ProductList = ({ products }) => (
         <Row>
           {products.map(product => {
             return (
-              <Cell columns={4} key={product.id}>
+              <Cell key={product.id}>
                 <ProductCard product={product} />
               </Cell>
             );

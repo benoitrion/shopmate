@@ -19,17 +19,45 @@ function ProductPage({ product, addProductToCart }) {
         <Grid className="product-page_grid">
           <Row>
             <Cell className="product-page_image-section" columns={4}>
-              <Cell className="product-page_image">
+              <Cell>
                 <img
+                  className="product-page_image"
                   src={require(`../../static/product_images/${product.image}`)}
                   alt={product.name}
                   onClick={() => {}}
                 />
               </Cell>
               <Row className="product-page_thumbnails">
-                <Cell className="product-page_thumbnail" />
-                <Cell className="product-page_thumbnail" />
-                <Cell className="product-page_thumbnail" />
+                <Cell>
+                  <img
+                    className="product-page_thumbnail"
+                    src={require(`../../static/product_images/${
+                      product.image
+                    }`)}
+                    alt={product.name}
+                    onClick={() => {}}
+                  />
+                </Cell>
+                <Cell>
+                  <img
+                    className="product-page_thumbnail"
+                    src={require(`../../static/product_images/${
+                      product.image
+                    }`)}
+                    alt={product.name}
+                    onClick={() => {}}
+                  />
+                </Cell>
+                <Cell>
+                  <img
+                    className="product-page_thumbnail"
+                    src={require(`../../static/product_images/${
+                      product.image
+                    }`)}
+                    alt={product.name}
+                    onClick={() => {}}
+                  />
+                </Cell>
               </Row>
             </Cell>
             <Cell className="product-page_details" columns={8}>
