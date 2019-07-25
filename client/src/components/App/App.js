@@ -1,41 +1,61 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import Header from '../Header/Header';
-import ProductList from '../ProductList/ProductList';
-import ProductPage from '../ProductPage/ProductPage';
+import Header from "../Header/Header";
+import ProductList from "../ProductList/ProductList";
+import ProductPage from "../ProductPage/ProductPage";
+import PageNotFound from "../PageNotFound";
 
-import { fetchProducts } from '../../services/catalog/actions';
+import { fetchProducts } from "../../services/catalog/actions";
 
 class App extends Component {
-
   constructor() {
     super();
     this.state = {
-      products: [],
-      product: {
-          id:1,
-          name: 'Arc d\'Triomphe',
-          description: 'This beautiful and iconic T-shirt will no doubt lead you to your own triumph.',
-          price: 14.99,
-          discounted_price: 0.00,
-          image: 'arc-d-triomphe.gif',
-          image_2: 'arc-d-triomphe-2.gif',
-          thumbnail: 'arc-d-triomphe-thumbnail.gif',
-          display: 0
-      }
-    }
+      products: []
+    };
   }
 
   componentDidMount() {
-    fetchProducts().then(data => this.setState({ products: data }));
+    fetchProducts().then(data => {
+      this.setState({ products: data });
+    });
   }
 
   render() {
     return (
       <React.Fragment>
-          {/* <Header></Header> */}
-          {/* <ProductList products={this.state.products} /> */}
-          <ProductPage product={this.state.product} addProductToCart={() => {}} />
+        <Header
+          onClickMenu={() => {
+            console.log("menu clicked");
+          }}
+        />
+        <Router>
+          <Switch>
+            <Route
+              exact
+              path="/"
+              render={props => (
+                <ProductList {...props} products={this.state.products} />
+              )}
+            />
+            <Route
+              path="/product/:product_id"
+              render={props => (
+                <ProductPage
+                  {...props}
+                  product={this.state.products.find(
+                    p => Number(props.match.params.product_id) === p.product_id
+                  )}
+                  addProductToCart={() => {
+                    console.log("added to cart");
+                  }}
+                />
+              )}
+            />
+            <Route component={PageNotFound} />
+          </Switch>
+        </Router>
       </React.Fragment>
     );
   }

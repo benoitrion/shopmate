@@ -23,7 +23,7 @@ module.exports = {
     },
     findOne(req, res) {
         return Product
-            .findOne({ where: { id: req.params.id  }, })
+            .findOne({ where: { product_id: req.params.id  }, })
             .then(products => res.status(201).send(products))
             .catch(error => res.status(400).send(error));
     }

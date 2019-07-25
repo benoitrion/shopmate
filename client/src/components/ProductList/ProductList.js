@@ -1,31 +1,33 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import { Cell, Grid, Row } from '@material/react-layout-grid';
+import { Cell, Grid, Row } from "@material/react-layout-grid";
 
-import '@material/react-layout-grid/index.scss';
+import "@material/react-layout-grid/index.scss";
 
-import ProductCard from './ProductCard/ProductCard';
+import ProductCard from "./ProductCard/ProductCard";
 
-import './ProductList.scss';
+import "./ProductList.scss";
 
-function ProductList({ products }) {
-  return (
-    <React.Fragment>
-      <Grid className="product-list_grid">
+const ProductList = ({ products }) => (
+  <React.Fragment>
+    <Grid className="product-list_grid">
+      {products && products.length > 0 ? (
         <Row>
-          {products.map(p => {
+          {products.map(product => {
             return (
-              <Cell columns={4} key={p.id}>
-                <ProductCard product={p}/>
+              <Cell columns={4} key={product.id}>
+                <ProductCard product={product} />
               </Cell>
-            )
+            );
           })}
         </Row>
-      </Grid>
-    </React.Fragment>
-  )
-}
+      ) : (
+        "Loading..."
+      )}
+    </Grid>
+  </React.Fragment>
+);
 
 ProductList.propTypes = {
   products: PropTypes.array.isRequired
