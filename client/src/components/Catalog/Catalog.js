@@ -9,7 +9,7 @@ import "./Catalog.scss";
 
 const Catalog = ({ products }) => (
   <React.Fragment>
-    <Grid className="catalog_grid">
+    <Grid className="catalog_grid" container spacing={3}>
       <Row className="catalog-paging" columns={12}>
         This is catalog paging
       </Row>
