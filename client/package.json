@@ -16,7 +16,7 @@
     "@types/react-dom": "^16.8.4",
     "axios": "^0.18.0",
     "material-components-web": "^2.3.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "^3.0.1",
